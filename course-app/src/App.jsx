@@ -8,6 +8,7 @@ import Spinner from './components/Spinner'
 
 const App = ()  => {
   
+  // 1:10 hr
   const [courses, setCourse] = useState(null);
   const  [loading, setLoading] = useState(true);
 
