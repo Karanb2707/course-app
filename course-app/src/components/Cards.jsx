@@ -20,7 +20,7 @@ const Cards = ({courses}) => {
     }
 
   return (
-    <div>
+    <div className='w-10/12 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mx-auto py-2'>
         {
             getCourses().map(course => {
                 return(
