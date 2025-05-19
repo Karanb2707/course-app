@@ -7,8 +7,8 @@ const Card = ({course}) => {
         <div className='flex flex-col space-y-2'>
             <img className='rounded-2xl' src={course.image.url} alt="" />
             
-            <div className='flex justify-end p-2'>
-                <button>
+            <div className='flex justify-end p-1'>
+                <button className='p-2 border rounded-full bg-purple-200 cursor-pointer'>
                     <FcLike fontSize="1.75rem" />
                 </button>
             </div>
