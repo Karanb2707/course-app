@@ -1,17 +1,16 @@
 import React from 'react'
 import Card from './Card';
 
-const Cards = ({courses}) => {
+const Cards = (props) => {
 
-    if (!courses) return <div>Loading...</div>;
-
-    let allCourses = [];
+    let courses = props.courses;
 
     // returns all courses
     const getCourses = () => {
+        let allCourses = [];
         console.log(courses);
-        Object.values(courses).forEach((courseCat) => {
-            courseCat.forEach((course) => {
+        Object.values(courses).forEach(courseCat => {
+            courseCat.forEach(course => {
                 allCourses.push(course);
             })
         })
