@@ -1,19 +1,28 @@
-import React from 'react'
-import { FcLike } from "react-icons/fc"
+import React, { useState } from 'react';
+import { FcLike } from "react-icons/fc";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const Card = ({course}) => {
+
+    const [likeBtn, setLikeBtn] = useState(false);
+
+    function likeFunHandler() {
+        setLikeBtn(!likeBtn);
+        console.log("Liked:", !likeBtn);
+    }
+
   return (
     <div className='flex flex-col border p-3 m-2 rounded-2xl'>
         <div className='flex flex-col space-y-2'>
             <img className='rounded-2xl' src={course.image.url} alt="" />
             
-            <div className='flex justify-end p-1'>
-                <button className='p-2 border rounded-full bg-purple-200 cursor-pointer'>
-                    <FcLike fontSize="1.75rem" />
+            <div className='flex justify-end p-1 -mt-[60px]'>
+                <button className='p-2 rounded-full bg-purple-200 cursor-pointer' onClick={likeFunHandler}>
+                    {likeBtn ? <FcLike fontSize="1.75rem" /> : <AiOutlineHeart fontSize="1.75rem" />}
                 </button>
             </div>
         </div>
-        <div className='flex flex-col justify-between space-y-2'>
+        <div className='flex flex-col justify-between space-y-2 mt-4'>
             <h4 className="text-xl font-bold">{course.title}</h4>
             <p>{course.description}</p>
         </div>
