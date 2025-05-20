@@ -1,23 +1,31 @@
 import React, { useState } from 'react'
 import Card from './Card';
 
-const Cards = (props) => {
-
-    let courses = props.courses;
+const Cards = ({courses, category}) => {
 
     const [allLikedCourses, setLikedCourses] = useState([]);
 
     // returns all courses
     const getCourses = () => {
-        let allCourses = [];
-        console.log(courses);
-        Object.values(courses).forEach(courseCat => {
-            courseCat.forEach(course => {
-                allCourses.push(course);
+        
+        if(category === "All")
+        {
+            let allCourses = [];
+            console.log(courses);
+            Object.values(courses).forEach(courseCat => {
+                courseCat.forEach(course => {
+                    allCourses.push(course);
+                })
             })
-        })
 
-        return allCourses;
+            return allCourses;
+        }
+        else
+        {
+            // specific category
+            return courses[category];
+        }
+        
     }
 
   return (
