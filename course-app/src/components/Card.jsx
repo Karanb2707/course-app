@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { FcLike } from "react-icons/fc";
 import { AiOutlineHeart } from "react-icons/ai";
+import { toast } from "react-toastify"
 
 const Card = ({course}) => {
 
     const [likeBtn, setLikeBtn] = useState(false);
 
     function likeFunHandler() {
-        setLikeBtn(!likeBtn);
-        console.log("Liked:", !likeBtn);
+        const likeState = !likeBtn;
+        setLikeBtn(likeState);
+        likeState ? toast.success('Liked!') : toast.warning('Like Removed!');
     }
 
   return (
