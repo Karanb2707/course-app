@@ -45,7 +45,13 @@ const Card = ({course, allLikedCourses, setLikedCourses}) => {
         </div>
         <div className='flex flex-col justify-between space-y-2 mt-4'>
             <h4 className="text-xl font-bold">{course.title}</h4>
-            <p>{course.description}</p>
+            <p>
+                {
+                    course.description.length > 150 ?
+                    course.description.substr(0, 150) + '...' :
+                    course.description
+                }
+            </p>
         </div>
     </div>
   )

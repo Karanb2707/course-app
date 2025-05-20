@@ -21,7 +21,7 @@ const Cards = (props) => {
     }
 
   return (
-    <div className='w-10/12 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mx-auto py-2'>
+    <div className='w-8/12 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mx-auto py-2'>
         {
             getCourses().map(course => {
                 return(
